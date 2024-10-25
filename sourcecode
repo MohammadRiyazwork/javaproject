@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class EmailAddress {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("What is your email address?: ");
+        String email = scanner.nextLine().trim();
+        
+        // Slice out the user name
+        String userName = email.substring(0, email.indexOf("@"));
+        
+        // Slice the domain name
+        String domainName = email.substring(email.indexOf("@") + 1);
+        
+        // Format message
+        String output = String.format("Your username is '%s' and your domain name is '%s'", userName, domainName);
+        
+        // Display output message
+        System.out.println(output);
+    }
+}
